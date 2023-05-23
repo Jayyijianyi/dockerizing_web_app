@@ -1,0 +1,17 @@
+version: '3'
+services:
+        web:
+                build:
+                        context: .
+                        dockerfile: Dockerfile
+                ports:
+                        - '8080:80'
+                volumes:
+                        - ./index.html:/usr/share/nginx/html/index.html
+                deploy:
+                        resources:
+                                limits:
+                                        cpus: '0.5'
+                                        memory: '512M'
+
+
